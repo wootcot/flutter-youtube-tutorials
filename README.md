@@ -1,16 +1,29 @@
-# flutter_tutorials
+# Flutter High Level Simplified Architecture with Riverpod
 
-Flutter Tutorials
+[Click to view tutorial 👉🏻](https://www.youtube.com/watch?v=GX0dLN4vxtk)
 
-## Getting Started
+## How to follow along?
 
-This project is a starting point for a Flutter application.
+Create a brand new **Flutter** project using the following command.
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+flutter create --org com.tutorial --description 'your_description' flutter_tutorial -i swift -a kotlin
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Folder Structure Used
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- lib/
+  - core
+    - models
+    - screen_controllers
+    - services
+  - ui
+    - screens
+    - widgets
+  - main.dart
+
+## Tutorial Overview
+
+We will convert this workflow into our flutter project.
+
+![Riverpod Workflow](./images/riverpod-workflow.png)
