@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorials/home.screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'package:wootcot_simplified/home.screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ProviderScope(child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -12,8 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Wootcot Simplified',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
       home: const HomeScreen(title: 'Flutter Tutorials'),
     );
