@@ -1,7 +1,7 @@
 import 'package:faker/faker.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'package:flutter_tutorials/core/models/todo_list.model.dart';
+import 'package:wootcot_simplified/core/models/todo_list.model.dart';
 
 part 'todo_list.notifier.g.dart';
 

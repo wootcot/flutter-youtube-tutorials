@@ -1,7 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'package:flutter_tutorials/core/models/todo_list.model.dart';
-import 'package:flutter_tutorials/core/services/todo_list.service.dart';
+import 'package:wootcot_simplified/core/models/todo_list.model.dart';
+import 'package:wootcot_simplified/core/services/todo_list.service.dart';
 
 part 'todo_list_async.notifier.g.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:flutter_tutorials/core/screen_controllers/todo_list_async.notifier.dart';
+import 'package:wootcot_simplified/core/screen_controllers/todo_list_async.notifier.dart';
 
 class TodoListAsyncScreen extends ConsumerWidget {
   const TodoListAsyncScreen({super.key});

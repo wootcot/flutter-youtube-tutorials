@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.wootcotsimplified" "\0"
-            VALUE "FileDescription", "flutter_tutorials" "\0"
+            VALUE "FileDescription", "wootcot_simplified" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "flutter_tutorials" "\0"
+            VALUE "InternalName", "wootcot_simplified" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2025 com.wootcotsimplified. All rights reserved." "\0"
-            VALUE "OriginalFilename", "flutter_tutorials.exe" "\0"
-            VALUE "ProductName", "flutter_tutorials" "\0"
+            VALUE "OriginalFilename", "wootcot_simplified.exe" "\0"
+            VALUE "ProductName", "wootcot_simplified" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
