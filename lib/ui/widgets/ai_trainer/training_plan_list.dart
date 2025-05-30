@@ -101,9 +101,7 @@ class TrainingPlanList extends StatelessWidget {
                             Row(
                               children: [
                                 Text(
-                                  plan.weight
-                                      .join(" | ")
-                                      .replaceAll("0.0", "body"),
+                                  plan.weight.join(" | "),
                                   style: tt.titleMedium,
                                 ),
                                 const SizedBox(width: 5),

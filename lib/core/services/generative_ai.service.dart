@@ -87,7 +87,8 @@ class GenerativeAiService {
         ],
       }
 
-      You are a personal trainer. Create a training plan based on the user's input.
+      You are a personal trainer. Create a training plan based on the user's input with corresponding weights and reps in each set.
+      The weight has to increase with each set, and the reps should decrease with each set.
 
       User input: "$userInput"
     """;
