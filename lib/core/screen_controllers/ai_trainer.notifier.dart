@@ -1,13 +1,13 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'package:wootcot_simplified/core/services/generative_ai.service.dart';
 import 'package:wootcot_simplified/core/models/training_plan.model.dart';
+import 'package:wootcot_simplified/core/services/generative_ai.service.dart';
 
 part 'ai_trainer.notifier.g.dart';
 
 @Riverpod(keepAlive: true)
 class AiTrainerNotifier extends _$AiTrainerNotifier {
-  GeminiService get _geminiService => ref.read(geminiServiceProvider);
+  GenerativeAiService get _aiService => ref.read(generativeAiServiceProvider);
 
   @override
   FutureOr<TrainingPlan?> build() async {
@@ -18,7 +18,7 @@ class AiTrainerNotifier extends _$AiTrainerNotifier {
   Future<void> generate(String text) async {
     try {
       state = AsyncLoading<TrainingPlan>();
-      final result = await _geminiService.generateResponse(text);
+      final result = await _aiService.generateWithGemini(text);
       state = AsyncData(result);
     } catch (error) {
       state = AsyncError(error, StackTrace.current);
