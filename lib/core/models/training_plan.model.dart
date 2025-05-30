@@ -19,9 +19,9 @@ sealed class TrainingPlan with _$TrainingPlan {
 sealed class PlanItem with _$PlanItem {
   const factory PlanItem({
     required int sets,
-    required int reps,
-    required double weight,
+    required List<num> reps,
     required String exercise,
+    required List<double> weight,
   }) = _PlanItem;
 
   factory PlanItem.fromJson(Map<String, dynamic> json) =>

@@ -25,14 +25,17 @@ Map<String, dynamic> _$TrainingPlanToJson(_TrainingPlan instance) =>
 
 _PlanItem _$PlanItemFromJson(Map<String, dynamic> json) => _PlanItem(
   sets: (json['sets'] as num).toInt(),
-  reps: (json['reps'] as num).toInt(),
-  weight: (json['weight'] as num).toDouble(),
+  reps: (json['reps'] as List<dynamic>).map((e) => e as num).toList(),
   exercise: json['exercise'] as String,
+  weight:
+      (json['weight'] as List<dynamic>)
+          .map((e) => (e as num).toDouble())
+          .toList(),
 );
 
 Map<String, dynamic> _$PlanItemToJson(_PlanItem instance) => <String, dynamic>{
   'sets': instance.sets,
   'reps': instance.reps,
-  'weight': instance.weight,
   'exercise': instance.exercise,
+  'weight': instance.weight,
 };

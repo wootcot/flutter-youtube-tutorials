@@ -161,7 +161,7 @@ as List<PlanItem>,
 /// @nodoc
 mixin _$PlanItem {
 
- int get sets; int get reps; double get weight; String get exercise;
+ int get sets; List<num> get reps; String get exercise; List<double> get weight;
 /// Create a copy of PlanItem
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -174,16 +174,16 @@ $PlanItemCopyWith<PlanItem> get copyWith => _$PlanItemCopyWithImpl<PlanItem>(thi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PlanItem&&(identical(other.sets, sets) || other.sets == sets)&&(identical(other.reps, reps) || other.reps == reps)&&(identical(other.weight, weight) || other.weight == weight)&&(identical(other.exercise, exercise) || other.exercise == exercise));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PlanItem&&(identical(other.sets, sets) || other.sets == sets)&&const DeepCollectionEquality().equals(other.reps, reps)&&(identical(other.exercise, exercise) || other.exercise == exercise)&&const DeepCollectionEquality().equals(other.weight, weight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,sets,reps,weight,exercise);
+int get hashCode => Object.hash(runtimeType,sets,const DeepCollectionEquality().hash(reps),exercise,const DeepCollectionEquality().hash(weight));
 
 @override
 String toString() {
-  return 'PlanItem(sets: $sets, reps: $reps, weight: $weight, exercise: $exercise)';
+  return 'PlanItem(sets: $sets, reps: $reps, exercise: $exercise, weight: $weight)';
 }
 
 
@@ -194,7 +194,7 @@ abstract mixin class $PlanItemCopyWith<$Res>  {
   factory $PlanItemCopyWith(PlanItem value, $Res Function(PlanItem) _then) = _$PlanItemCopyWithImpl;
 @useResult
 $Res call({
- int sets, int reps, double weight, String exercise
+ int sets, List<num> reps, String exercise, List<double> weight
 });
 
 
@@ -211,13 +211,13 @@ class _$PlanItemCopyWithImpl<$Res>
 
 /// Create a copy of PlanItem
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? sets = null,Object? reps = null,Object? weight = null,Object? exercise = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? sets = null,Object? reps = null,Object? exercise = null,Object? weight = null,}) {
   return _then(_self.copyWith(
 sets: null == sets ? _self.sets : sets // ignore: cast_nullable_to_non_nullable
 as int,reps: null == reps ? _self.reps : reps // ignore: cast_nullable_to_non_nullable
-as int,weight: null == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
-as double,exercise: null == exercise ? _self.exercise : exercise // ignore: cast_nullable_to_non_nullable
-as String,
+as List<num>,exercise: null == exercise ? _self.exercise : exercise // ignore: cast_nullable_to_non_nullable
+as String,weight: null == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
+as List<double>,
   ));
 }
 
@@ -228,13 +228,25 @@ as String,
 @JsonSerializable()
 
 class _PlanItem implements PlanItem {
-  const _PlanItem({required this.sets, required this.reps, required this.weight, required this.exercise});
+  const _PlanItem({required this.sets, required final  List<num> reps, required this.exercise, required final  List<double> weight}): _reps = reps,_weight = weight;
   factory _PlanItem.fromJson(Map<String, dynamic> json) => _$PlanItemFromJson(json);
 
 @override final  int sets;
-@override final  int reps;
-@override final  double weight;
+ final  List<num> _reps;
+@override List<num> get reps {
+  if (_reps is EqualUnmodifiableListView) return _reps;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_reps);
+}
+
 @override final  String exercise;
+ final  List<double> _weight;
+@override List<double> get weight {
+  if (_weight is EqualUnmodifiableListView) return _weight;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_weight);
+}
+
 
 /// Create a copy of PlanItem
 /// with the given fields replaced by the non-null parameter values.
@@ -249,16 +261,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PlanItem&&(identical(other.sets, sets) || other.sets == sets)&&(identical(other.reps, reps) || other.reps == reps)&&(identical(other.weight, weight) || other.weight == weight)&&(identical(other.exercise, exercise) || other.exercise == exercise));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PlanItem&&(identical(other.sets, sets) || other.sets == sets)&&const DeepCollectionEquality().equals(other._reps, _reps)&&(identical(other.exercise, exercise) || other.exercise == exercise)&&const DeepCollectionEquality().equals(other._weight, _weight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,sets,reps,weight,exercise);
+int get hashCode => Object.hash(runtimeType,sets,const DeepCollectionEquality().hash(_reps),exercise,const DeepCollectionEquality().hash(_weight));
 
 @override
 String toString() {
-  return 'PlanItem(sets: $sets, reps: $reps, weight: $weight, exercise: $exercise)';
+  return 'PlanItem(sets: $sets, reps: $reps, exercise: $exercise, weight: $weight)';
 }
 
 
@@ -269,7 +281,7 @@ abstract mixin class _$PlanItemCopyWith<$Res> implements $PlanItemCopyWith<$Res>
   factory _$PlanItemCopyWith(_PlanItem value, $Res Function(_PlanItem) _then) = __$PlanItemCopyWithImpl;
 @override @useResult
 $Res call({
- int sets, int reps, double weight, String exercise
+ int sets, List<num> reps, String exercise, List<double> weight
 });
 
 
@@ -286,13 +298,13 @@ class __$PlanItemCopyWithImpl<$Res>
 
 /// Create a copy of PlanItem
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? sets = null,Object? reps = null,Object? weight = null,Object? exercise = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? sets = null,Object? reps = null,Object? exercise = null,Object? weight = null,}) {
   return _then(_PlanItem(
 sets: null == sets ? _self.sets : sets // ignore: cast_nullable_to_non_nullable
-as int,reps: null == reps ? _self.reps : reps // ignore: cast_nullable_to_non_nullable
-as int,weight: null == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
-as double,exercise: null == exercise ? _self.exercise : exercise // ignore: cast_nullable_to_non_nullable
-as String,
+as int,reps: null == reps ? _self._reps : reps // ignore: cast_nullable_to_non_nullable
+as List<num>,exercise: null == exercise ? _self.exercise : exercise // ignore: cast_nullable_to_non_nullable
+as String,weight: null == weight ? _self._weight : weight // ignore: cast_nullable_to_non_nullable
+as List<double>,
   ));
 }
 

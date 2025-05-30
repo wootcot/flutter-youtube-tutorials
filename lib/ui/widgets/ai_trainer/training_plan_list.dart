@@ -83,23 +83,31 @@ class TrainingPlanList extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 10),
-                          Row(
-                            children: [
-                              Text("${plan.reps}", style: tt.displaySmall),
-                              const SizedBox(width: 5),
-                              Text("REPS", style: tt.bodyMedium),
-                            ],
-                          ),
-                          if (plan.weight > 0) ...[
+                          if (plan.reps.isNotEmpty) ...[
                             const SizedBox(height: 10),
                             Row(
                               children: [
                                 Text(
-                                  "${plan.weight} kg",
-                                  style: tt.displaySmall,
+                                  plan.reps.join(" | "),
+                                  style: tt.titleMedium,
                                 ),
                                 const SizedBox(width: 5),
-                                Text("WEIGHT", style: tt.bodyMedium),
+                                Text("REPS", style: tt.bodyMedium),
+                              ],
+                            ),
+                          ],
+                          if (plan.weight.isNotEmpty) ...[
+                            const SizedBox(height: 10),
+                            Row(
+                              children: [
+                                Text(
+                                  plan.weight
+                                      .join(" | ")
+                                      .replaceAll("0.0", "body"),
+                                  style: tt.titleMedium,
+                                ),
+                                const SizedBox(width: 5),
+                                Text("WEIGHTS (kg)", style: tt.bodyMedium),
                               ],
                             ),
                           ],
