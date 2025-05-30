@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:wootcot_simplified/home.screen.dart';
+import 'package:wootcot_simplified/ui/screens/enter_training_plan.dart';
 
 void main() {
   runApp(ProviderScope(child: const MyApp()));
@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
       title: 'Wootcot Simplified',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
       ),
-      home: const HomeScreen(title: 'Flutter Tutorials'),
+      home: EnterTrainingPlan(),
     );
   }
 }
