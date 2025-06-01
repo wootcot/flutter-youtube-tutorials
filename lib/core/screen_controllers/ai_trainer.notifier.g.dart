@@ -6,7 +6,7 @@ part of 'ai_trainer.notifier.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$aiTrainerNotifierHash() => r'00c2f2650dd1927839061334e1b1085856f505a8';
+String _$aiTrainerNotifierHash() => r'2d97739b042da05c86ffc04cbc2551f8edae0ff3';
 
 /// See also [AiTrainerNotifier].
 @ProviderFor(AiTrainerNotifier)
