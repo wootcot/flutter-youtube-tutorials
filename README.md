@@ -1,4 +1,4 @@
-# Flutter High Level Simplified Architecture with Riverpod
+# Part 1: Flutter High Level Simplified Architecture with Riverpod
 
 [Click to view tutorial 👉🏻](https://www.youtube.com/watch?v=gbHj1EkpuIQ&list=PLJDAe6L3tk1up4gebuvNn3xxW8u5kmpoV&index=1)
 
@@ -27,3 +27,11 @@ flutter create --org com.tutorial --description 'your_description' flutter_tutor
 We will convert this workflow into our flutter project.
 
 ![Riverpod Workflow](./images/riverpod-workflow.png)
+
+---
+
+# Part 2: Additional Riverpod Concepts - Flutter
+
+[Click to view tutorial 👉🏻](https://youtu.be/fU15nxFKInA)
+
+![Part 2: Riverpod Additional Concepts](./images/part-2-riverpod-additional-concepts.png)
