@@ -36,7 +36,6 @@ class TodoListAsyncNotifier extends _$TodoListAsyncNotifier {
 
   Future<void> remove(int index) async {
     try {
-      state = AsyncLoading<TodoList>().copyWithPrevious(state);
       final result = await _todoService.remove(index);
       state = AsyncData(state.value!.copyWith(todos: result));
     } catch (error) {

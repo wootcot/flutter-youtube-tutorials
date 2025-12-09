@@ -42,6 +42,12 @@ class TodoListScreen extends ConsumerWidget {
                       stateNotifier.remove(index);
                       return Future.value(false);
                     },
+                    background: Container(
+                      color: Colors.red,
+                      alignment: Alignment.centerRight,
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      child: Icon(Icons.delete, color: Colors.white),
+                    ),
                     child: ListTile(title: Text(item.title)),
                   );
                 },
